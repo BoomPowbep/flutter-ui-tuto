@@ -1,8 +1,17 @@
 import 'package:flutter/material.dart';
 
-void main() => runApp(MyApp());
+import 'FavoriteWidget.dart';
 
 class MyApp extends StatelessWidget {
+
+  Widget imageSection = Image.asset(
+      'images/lake.jpg',
+      width: 600,
+      height: 240,
+      fit: BoxFit.cover
+  );
+
+  /** ******************************************** **/
 
   Widget titleSection = Container(
     padding: const EdgeInsets.all(32),
@@ -33,11 +42,7 @@ class MyApp extends StatelessWidget {
           ),
         ),
         /*3*/
-        Icon(
-          Icons.star,
-          color: Colors.red[500]
-        ),
-        Text('41'),
+        FavoriteWidget(),
       ],
     ),
   );
@@ -100,12 +105,7 @@ class MyApp extends StatelessWidget {
         ),
         body: ListView(
           children: [
-            Image.asset(
-              'images/lake.jpg',
-              width: 600,
-              height: 240,
-              fit: BoxFit.cover
-            ),
+            imageSection,
             titleSection,
             buttonSection,
             textSection,
@@ -115,3 +115,5 @@ class MyApp extends StatelessWidget {
     );
   }
 }
+
+void main() => runApp(MyApp());
